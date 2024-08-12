@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RandomSpawner : MonoBehaviour
+{
+    public Transform[] points;
+    public GameObject[] items;
+
+    public void Respawn(int index)
+    {
+        int ind = Random.Range(0, points.Length);
+        if (items[index] != null) 
+            items[index].transform.position = points[ind].position;
+    }
+}
